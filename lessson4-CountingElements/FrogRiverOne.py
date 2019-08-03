@@ -1,14 +1,15 @@
+
+
 def solution(X, A):
     # write your code in Python 3.6
-    arr=[0]*X
-    flag=0
-    for i in range(len(A)):
-        arr[A[i]-1]=1
-        flag=0
-        for j in arr:
-            if j==0:
-                flag=-1
-        if flag==0:
-            return i
-            
-    return flag
+    arr = [0]*(X+1)
+    count =0
+    for i in A:
+        if arr[i]==0:
+            arr[i]=1
+            X =X-1
+        if X == 0:
+            return count
+        count =count+1
+        
+    return -1
